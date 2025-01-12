@@ -110,3 +110,204 @@ textarea::-webkit-scrollbar-thumb {
 }
 
 // -----------------------------------------------------------------------
+// --------------React Select custom css ----------------
+.react-select__control {
+  min-width: 300px !important;
+  width: 100% !important;
+  border: 1px solid $gray-99 !important;
+  @include borderRadius(4px);
+  @media (max-width: $sm-media) {
+    // width: 100% !important;
+  }
+}
+.react-select__menu {
+  &::-webkit-scrollbar {
+    width: 4px !important;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #3c3a34 !important;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $yellow-FE !important;
+    outline: 1px solid $yellow-FE !important;
+  }
+}
+// --------------React Select -role custom css ----------------
+.react-select-role__control {
+  min-width: 300px !important;
+  min-height: 44px !important;
+  width: 100% !important;
+  border: 1px solid #ffffff0f !important;
+  // border-color: transparent !important;
+  @include borderRadius(4px);
+
+  &:hover {
+    // box-shadow: none !important;
+    // border-color: transparent !important;
+  }
+
+  @media (max-width: $sm-media) {
+    // width: 100% !important;
+  }
+}
+
+.react-select-role__control--is-focused {
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+
+.react-select-role__placeholder {
+  color: #bababa !important;
+  font-size: 14px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: normal !important;
+}
+
+.react-select-role__menu {
+  background-color: #424344 !important;
+  color: #bababa;
+  &::-webkit-scrollbar {
+    width: 4px !important;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #3c3a34 !important;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $yellow-FE !important;
+    outline: 1px solid $yellow-FE !important;
+  }
+}
+.react-select-role__input {
+  color: $white !important;
+  font-size: 16px !important;
+}
+
+.react-select-role__input-container {
+  color: $white !important;
+}
+
+.react-select-role__single-value {
+  color: $white !important;
+}
+
+// --------------React Select -role custom css ----------------
+.react-select-role__control {
+  min-width: 300px !important;
+  min-height: 44px !important;
+  width: 100% !important;
+  border: 1px solid #ffffff0f !important;
+  // border-color: transparent !important;
+  @include borderRadius(4px);
+
+  &:hover {
+    // box-shadow: none !important;
+    // border-color: transparent !important;
+  }
+
+  @media (max-width: $sm-media) {
+    // width: 100% !important;
+  }
+}
+
+.react-select-role__control--is-focused {
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+
+.react-select-role__placeholder {
+  color: #bababa !important;
+  font-size: 14px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: normal !important;
+}
+
+.react-select-role__menu {
+  background-color: #424344 !important;
+  color: #bababa;
+  &::-webkit-scrollbar {
+    width: 4px !important;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #3c3a34 !important;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $yellow-FE !important;
+    outline: 1px solid $yellow-FE !important;
+  }
+}
+
+.react-select-role__input {
+  color: $white !important;
+  font-size: 16px !important;
+}
+
+.react-select-role__input-container {
+  color: $white !important;
+}
+.react-select-role__single-value {
+  color: $white !important;
+}
+// =====================================================
+
+// --------------React Select2 custom css ----------------
+.react-select2__control {
+  min-width: 300px !important;
+  width: 100% !important;
+  background-color: #fcfdfe !important;
+  border: 1px solid $gray-E4 !important;
+  min-height: 43px !important;
+  @include borderRadius(8px !important);
+}
+
+// ------------------react-international-phone-input----------------------------
+.react-international-phone-input-container {
+  padding-top: 10px !important;
+  padding-inline-start: 8px !important;
+  background-color: #fcfdfe !important;
+  border: 1px solid $gray-E4 !important;
+  @include borderRadius(8px !important);
+  min-height: 43px !important;
+}
+
+.react-international-phone-country-selector {
+  height: 100% !important;
+}
+.react-international-phone-country-selector-button {
+  height: 100% !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+.react-international-phone-country-selector-button__button-content {
+  height: 100% !important;
+  background-color: transparent !important;
+}
+.react-international-phone-input {
+  height: 100% !important;
+  width: 100% !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+  // font-family: var(--font-inter !important);
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 16.94px !important;
+  // color: $gray-9F !important;
+}
+
+.react-international-phone-country-selector-dropdown {
+  // background-color: #47443d !important;
+  // background: $primary !important;
+
+  outline: none;
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #f6f7f9;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $primary;
+    outline: 1px solid $primary;
+  }
+}
