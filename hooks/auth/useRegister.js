@@ -25,14 +25,12 @@ const useRegister = () => {
   const [isSuccess, setIsSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [responseFromApi, setResponseFromApi] = useState(null);
-  const [uploadedImg, setUploadedImg] = useState("");
+
   // ------------------------Phone Input----------------------------------------
+  const [isB2B, setIsB2B] = useState(false);
   const [enteredPhone, setEnteredPhone] = useState(null);
   const [isPhoneValid, setIsPhoneValid] = useState(false);
   const [selectedCountryCode, setSelectedCountryCode] = useState(null);
-
-  const [uploadedIDImage, setUploadedIDImage] = useState(null);
-  const [uploadedProfileImage, setUploadedProfileImage] = useState(null);
 
   let onChangePhone = (isValid, key, num) => {
     setIsPhoneValid(isValid);
@@ -40,11 +38,12 @@ const useRegister = () => {
     setEnteredPhone(num);
   };
 
-  let onChangeNationalIDImage = (imgFile) => {
-    setUploadedIDImage(imgFile);
-  };
-  let onChangProfileImage = (imgFile) => {
-    setUploadedProfileImage(imgFile);
+  const selectClientTypeHandler = (type) => {
+    if (type === "B2B") {
+      setIsB2B(true);
+    } else {
+      setIsB2B(false);
+    }
   };
 
   // ----------------------------------------------------------------
@@ -72,7 +71,6 @@ const useRegister = () => {
     passwordConfirm: Yup.string()
       .min(8, "Password must be at least 8 characters long")
       .max(32, "Password must be at most 32 characters long")
-      .oneOf([Yup.ref("password")], "Password mismatch")
       .matches(/[A-Z]/, "Password must contain at least one uppercase letter")
       .matches(/[a-z]/, "Password must contain at least one lowercase letter")
       .matches(/[0-9]/, "Password must contain at least one number")
@@ -80,6 +78,7 @@ const useRegister = () => {
         /[@$!%*?&]/,
         "Password must contain at least one special character (@, $, !, %, *, ?, &)"
       )
+      .oneOf([Yup.ref("password")], "Password mismatch")
       .required("Password confirmation is required"),
     clientType: Yup.string().required("Client type is required"),
     authority: Yup.string(),
@@ -106,26 +105,8 @@ const useRegister = () => {
   const { register, control, handleSubmit, formState, setValue } = form;
   const { errors } = formState;
 
-  const convert2base64 = (file) => {
-    const reader = new FileReader();
-
-    reader.onloadend = () => {
-      setUploadedImg(reader.result.split(",")[1]);
-      // setUploadedImg(reader.result.toString());
-    };
-    reader.readAsDataURL(file);
-  };
-
   const onSubmit = async (data) => {
     setIsLoading(true);
-    // console.log("nationalIdPhoto:----", JSON.stringify(data.nationalIdPhoto));
-    // console.log("Data:", data);
-    // console.log("Data.nationalIdPhoto:", data.nationalIdPhoto);
-
-    // if (data.nationalIdPhoto.length > 0) {
-    //   convert2base64(data.nationalIdPhoto[0]);
-    // }
-
     console.log("*** *** *** Data:", data);
 
     const formData = {
@@ -166,10 +147,10 @@ const useRegister = () => {
         if (responseFromApi.data) {
           // Cookies.set("token", responseFromApi.data.token);
           // Cookies.set("userData", responseFromApi.data);
-          // redirect("/sick-leave-request");
+
           setTimeout(() => {
-            // router.push("/moderators");
-            window.location.href = "/restaurants";
+            router.push("/");
+            // window.location.href = "/";
           }, 2000);
         }
       } else {
@@ -189,12 +170,11 @@ const useRegister = () => {
     errors,
     onChangePhone,
     isPhoneValid,
-    onChangeNationalIDImage,
-    onChangProfileImage,
-    uploadedImg,
     isSuccess,
     respMessage,
     isLoading,
+    isB2B,
+    selectClientTypeHandler,
   ];
 };
 

@@ -23,6 +23,7 @@ const ReactSelectRHF = ({
   isRequired,
   control,
   name,
+  customHandler,
 }) => {
   // const [defaultVal, setDefaultVal] = useState(defaultValue);
   // useEffect(() => {
@@ -49,7 +50,10 @@ const ReactSelectRHF = ({
             inputRef={ref}
             options={options}
             value={options.find((c) => c.value === value)}
-            onChange={(val) => onChange(val.value)}
+            onChange={(val) => {
+              onChange(val.value);
+              customHandler(val.value);
+            }}
             name={name}
             styles={selectStyles}
             classNamePrefix={classNamePrefix}
