@@ -114,6 +114,8 @@ const useRegister = () => {
   const { register, control, handleSubmit, formState, setValue } = form;
   const { errors } = formState;
 
+  console.log("Form errors:", errors);
+
   const onSubmit = async (data) => {
     setIsLoading(true);
     console.log("*** *** *** Data:", data);

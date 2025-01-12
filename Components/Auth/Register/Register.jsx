@@ -94,9 +94,9 @@ const Register = () => {
               label="Password confirmation"
               placeholder="Re enter your password"
               type="password"
-              id="passwordConfirmation"
-              register={{ ...register("passwordConfirmation") }}
-              error={errors.passwordConfirmation?.message}
+              id="passwordConfirm"
+              register={{ ...register("passwordConfirm") }}
+              error={errors.passwordConfirm?.message}
             />
 
             <div className={styles.inputWrapper}>
