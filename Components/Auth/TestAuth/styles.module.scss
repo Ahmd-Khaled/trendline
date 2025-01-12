@@ -1,7 +1,10 @@
 .testAuth {
+  padding: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 32px;
   width: 100%;
   height: 100%;
   //   background-color: $gray-F9;
@@ -13,7 +16,7 @@
     justify-content: center;
     flex-direction: column;
     gap: 16px;
-    margin: 100px auto;
+    margin: 0px auto;
   }
   h1 {
     font-size: 24px;

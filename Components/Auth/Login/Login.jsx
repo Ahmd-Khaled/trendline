@@ -4,8 +4,10 @@ import styles from "./styles.module.scss";
 import InputRHF2 from "@/Components/utils/InputRHF2/InputRHF2";
 import Link from "next/link";
 import useLogin from "@/hooks/auth/useLogin";
+import { ToastContainer } from "react-toastify";
 
 const Login = () => {
+  const locale = "en";
   const [
     setValue,
     register,
@@ -67,6 +69,19 @@ const Login = () => {
           </div>
         </form>
       </div>
+      <ToastContainer
+        position={locale === "ar" ? "bottom-right" : "bottom-left"}
+        autoClose={3000}
+        limit={1}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={locale === "ar"}
+        pauseOnFocusLoss={false}
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </section>
   );
 };
