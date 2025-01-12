@@ -1,0 +1,88 @@
+.register {
+  padding: 32px;
+  width: 100%;
+  height: 100vh;
+  @media (max-width: $md-media) {
+    height: 100%;
+  }
+  @media (max-width: $sm-media) {
+    padding: 16px;
+  }
+  .container {
+    display: flex;
+    gap: 32px;
+    height: 100%;
+    @media (max-width: $sm-media) {
+      margin-top: 150px;
+    }
+    .image {
+      height: 100%;
+      flex: 1;
+      background-color: #f8f7fa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include borderRadius(20px);
+
+      @media (max-width: $lg-media) {
+        display: none;
+      }
+    }
+    .regForm {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .logoImg {
+        margin: 0px auto 32px;
+      }
+      .allInputs {
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0px auto;
+        @media (max-width: $sm-media) {
+          width: 100%;
+        }
+      }
+      .inputWrapper {
+        display: flex;
+        // align-items: center;
+        gap: 16px;
+        @media (max-width: $md-media) {
+          flex-direction: column;
+          align-items: flex-start;
+          width: 100%;
+          gap: 0px;
+        }
+      }
+      .b2b {
+      }
+      .b2bHidden {
+        display: none;
+      }
+      .btns {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 16px;
+      }
+      .authBtn {
+        background-color: $primary;
+        color: $white;
+        @include borderRadius(8px);
+        height: 45px;
+        width: 50%;
+        margin: 0px auto;
+        @include transition(0.3s);
+        &:hover {
+          background-color: #847be8;
+        }
+        @media (max-width: $sm-media) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

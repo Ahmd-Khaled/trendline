@@ -64,8 +64,8 @@ const useRegister = () => {
       .matches(/[a-z]/, "Password must contain at least one lowercase letter")
       .matches(/[0-9]/, "Password must contain at least one number")
       .matches(
-        /[@$!%*?&]/,
-        "Password must contain at least one special character (@, $, !, %, *, ?, &)"
+        /[@$!%*?&#]/,
+        "Password must contain at least one special character (@, $, !, %, *, ?, &,#)"
       )
       .required("Password is required"),
     passwordConfirm: Yup.string()
@@ -136,7 +136,7 @@ const useRegister = () => {
     console.log("Form submission data:", formData);
 
     const response = await sendDataFileAxios(
-      `${baseUrl}register`,
+      `${baseUrl}auth/register`,
       formData,
       locale,
       token

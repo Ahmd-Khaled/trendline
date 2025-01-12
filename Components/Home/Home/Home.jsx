@@ -16,7 +16,7 @@ const Home = () => {
         </Link>
         <Link href="/test-auth">Test Auth</Link>
         <Link href="/register">Register</Link>
-        {/* <Link href="/login">Login</Link> */}
+        <Link href="/login">Login</Link>
       </div>
     </div>
   );
