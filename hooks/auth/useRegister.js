@@ -82,11 +82,9 @@ const useRegister = () => {
       )
       .required("Password confirmation is required"),
     clientType: Yup.string().required("Client type is required"),
-    authority: Yup.string().required("Issuing authority type is required"),
-    companyName: Yup.string().required("Company name is required"),
-    commercialLicenseNumber: Yup.string().required(
-      "Commercial license number is required"
-    ),
+    authority: Yup.string(),
+    companyName: Yup.string(),
+    commercialLicenseNumber: Yup.string(),
   });
 
   const form = useForm({

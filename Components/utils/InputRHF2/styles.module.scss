@@ -1,5 +1,8 @@
 .authInput {
   flex: 1;
+  @media (max-width: $md-media) {
+    width: 100%;
+  }
 
   label {
     font-family: var(--font-inter);
