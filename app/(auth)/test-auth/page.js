@@ -1,5 +1,7 @@
+import TestAuth from "@/Components/Auth/TestAuth/TestAuth";
+
 const TestAuthPage = () => {
-  return <div>TestAuthPage</div>;
+  return <TestAuth />;
 };
 
 export default TestAuthPage;
