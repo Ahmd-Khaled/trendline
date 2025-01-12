@@ -1,0 +1,67 @@
+.chooseLanguage {
+    position: relative;
+    .selectedLanguage {
+      cursor: pointer;
+      color: $white;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 0px 8px;
+      .text {
+        color: $white;
+        font-size: 16px;
+        font-weight: 400;
+        font-family: var(--font-cairo);
+      }
+      svg {
+        font-size: 14px;
+      }
+    }
+    .langList,
+    .langListEn {
+      position: absolute;
+      top: calc(100% + 13px);
+      left: 0px;
+      right: 0px;
+      text-align: center;
+      // color: $white;
+      // background-color: $gray-D2;
+      border: 1px solid rgba(0, 0, 0, 0.34);
+      border: 1px solid $gray-F2;
+      @include borderRadius(6px);
+      @include transition(0.3s);
+      // padding: 2px 12px 8px;
+      width: 100%;
+      z-index: 1001;
+      background-color: $white;
+      box-shadow: $shadow-1;
+      // background-color: rgba(255, 255, 255, 0.34);
+      // opacity: 0.34;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      @include transition(0.2s);
+      opacity: 1;
+      
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      &:hover {
+        // background-color: rgba(255, 255, 255, 0.5);
+        // opacity: 0.8;
+      }
+
+      .langItem {
+        padding: 6px 12px;
+        height: 100%;
+        width: 100%;
+        cursor: pointer;
+        color: $white;
+        color: $primary;
+        // color: red;
+        opacity: 1;
+        font-size: 16px;
+        font-family: var(--font-cairo);
+      }
+    }
+  }

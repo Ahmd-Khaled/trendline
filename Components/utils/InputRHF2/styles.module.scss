@@ -1,0 +1,62 @@
+.authInput {
+  flex: 1;
+
+  label {
+    font-family: var(--font-inter);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 15.73px;
+    color: $gray-5B;
+
+    margin-bottom: 7px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    .star {
+      color: $danger;
+    }
+  }
+  .inputBox {
+    height: 43px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+
+    background-color: #fcfdfe;
+    border: 1px solid $gray-E4;
+    @include borderRadius(8px);
+    @include transition(0.2s);
+    input {
+      width: 100%;
+      height: 100%;
+      padding: 11px;
+      &::placeholder {
+        font-family: var(--font-inter);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16.94px;
+        color: $gray-9F;
+      }
+      &:focus {
+        border-color: $primary;
+      }
+    }
+    .changeType {
+      padding-inline-end: 10px;
+      cursor: pointer;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .error {
+    color: $danger;
+    height: 14px;
+    padding-inline-start: 6px;
+    font-size: 13px;
+  }
+}

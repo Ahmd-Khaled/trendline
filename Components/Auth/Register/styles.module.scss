@@ -1,0 +1,56 @@
+.register {
+  padding: 32px;
+  width: 100%;
+  height: 100vh;
+  .container {
+    display: flex;
+    gap: 32px;
+    height: 100%;
+    .image {
+      height: 100%;
+      flex: 1;
+      background-color: #f8f7fa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include borderRadius(20px);
+
+      @media (max-width: $lg-media) {
+        display: none;
+      }
+    }
+    .regForm {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      // align-items: center;
+      justify-content: center;
+      .logoImg {
+        margin: 0px auto 32px;
+      }
+      .inputWrapper {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      .btns {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 16px;
+      }
+      .authBtn {
+        background-color: $primary;
+        color: $white;
+        @include borderRadius(8px);
+        height: 45px;
+        width: 80%;
+        margin: 0px auto;
+        @include transition(0.3s);
+        &:hover {
+          background-color: #847be8;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "shobyk",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^3.10.0",
+    "axios": "^1.7.9",
+    "google-libphonenumber": "^3.2.40",
+    "js-cookie": "^3.0.5",
+    "next": "^15.1.4",
+    "next-intl": "^3.26.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-hook-form": "^7.54.2",
+    "react-icons": "^5.4.0",
+    "react-international-phone": "^4.4.0",
+    "react-phone-number-input": "^3.4.11",
+    "react-select": "^5.9.0",
+    "react-toastify": "^11.0.2",
+    "sass": "^1.83.1",
+    "yup": "^1.6.1"
+  },
+  "devDependencies": {
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1"
+  }
+}

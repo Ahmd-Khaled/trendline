@@ -1,0 +1,20 @@
+.selectLabel {
+  font-family: var(--font-inter);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 14.52px;
+  margin-bottom: 7px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  .star {
+    color: $danger;
+  }
+}
+.error {
+  color: $danger;
+  height: 14px;
+  padding-inline-start: 4px;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
