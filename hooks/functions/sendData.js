@@ -14,20 +14,11 @@ export const sendData = async (url, data, locale) => {
       body: JSON.stringify(data),
       headers: {
         Accept: "*/*",
-        "Content-Type": "application/json",
+        "Content-Type": "multipart/form-data",
         "Access-Control-Allow-Headers": "Content-Type",
         "Access-Control-Allow-Origin": "*",
-        allow_headers: [
-          "Content-Type",
-          "Authorization",
-          "language",
-          "apiPassword",
-        ],
+        allow_headers: ["Content-Type", "Authorization"],
         "Accept-Language": "*",
-        "x-api-key": "yum_gutt_1666",
-        "X-country-id": "dc",
-        lang: locale || "en",
-        Authorization: `Bearer ${userToken}`,
       },
     });
     console.log(res);
@@ -92,15 +83,9 @@ export const sendwithoutData = async (url, locale, userToken) => {
         "Content-Type": "application/json",
         "Access-Control-Allow-Headers": "Content-Type",
         "Access-Control-Allow-Origin": "*",
-        allow_headers: [
-          "Content-Type",
-          "Authorization",
-          "language",
-          "apiPassword",
-        ],
+        allow_headers: ["Content-Type", "Authorization"],
         "Accept-Language": "*",
-        "x-api-key": "yum_gutt_1666",
-        "X-country-id": "dc",
+
         lang: locale || "en",
         Authorization: `Bearer ${userToken}`,
       },
@@ -159,22 +144,14 @@ export const sendDataFileAxios = async (url, data, locale, userToken) => {
   let axiosRes;
   try {
     let axiosConfig = {
+      mode: "no-cors",
       headers: {
         Accept: "*/*",
         "Content-Type": "multipart/form-data",
         "Access-Control-Allow-Headers": "Content-Type",
         "Access-Control-Allow-Origin": "*",
-        allow_headers: [
-          "Content-Type",
-          "Authorization",
-          "language",
-          "apiPassword",
-        ],
+        allow_headers: ["Content-Type", "Authorization"],
         "Accept-Language": "*",
-        "x-api-key": "yum_gutt_1666",
-        "X-country-id": "dc",
-        lang: locale || "en",
-        Authorization: `Bearer ${userToken}`,
       },
     };
 

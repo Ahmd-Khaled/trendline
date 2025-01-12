@@ -7,6 +7,7 @@ import {
   sendData,
   sendDataFileAxios,
   sendDataFiles,
+  sendwithoutData,
 } from "../functions/sendData";
 import { useEffect, useState } from "react";
 import notify from "../notify/useNotification";
@@ -34,8 +35,8 @@ const useRegister = () => {
 
   let onChangePhone = (isValid, key, num) => {
     setIsPhoneValid(isValid);
-    setSelectedCountryCode(key);
-    setEnteredPhone(num);
+    setSelectedCountryCode(key?.replace("+", ""));
+    setEnteredPhone(`${key?.replace("+", "")}${num}`);
   };
 
   const selectClientTypeHandler = (type) => {
@@ -139,7 +140,7 @@ const useRegister = () => {
       `${baseUrl}auth/register`,
       formData,
       locale,
-      token
+      ""
     );
     setResponseFromApi(response);
     setIsLoading(false);

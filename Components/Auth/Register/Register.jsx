@@ -6,6 +6,7 @@ import PhoneNumberInput from "@/Components/utils/PhoneNumberInput/PhoneNumberInp
 import ReactSelectRHF from "@/Components/utils/ReactSelect/ReactSelectRHF";
 import useRegister from "@/hooks/auth/useRegister";
 import Link from "next/link";
+import { ToastContainer } from "react-toastify";
 
 const clientTypesList = [
   {
@@ -23,6 +24,7 @@ const clientTypesList = [
 ];
 
 const Register = () => {
+  const locale = "en";
   const [
     setValue,
     register,
@@ -157,6 +159,19 @@ const Register = () => {
           </div>
         </form>
       </div>
+      <ToastContainer
+        position={locale === "ar" ? "bottom-right" : "bottom-left"}
+        autoClose={3000}
+        limit={1}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={locale === "ar"}
+        pauseOnFocusLoss={false}
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </section>
   );
 };
