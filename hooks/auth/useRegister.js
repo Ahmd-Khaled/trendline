@@ -69,36 +69,45 @@ const useRegister = () => {
       )
       .required("Password is required"),
     passwordConfirm: Yup.string()
-      .min(8, "Password must be at least 8 characters long")
-      .max(32, "Password must be at most 32 characters long")
-      .matches(/[A-Z]/, "Password must contain at least one uppercase letter")
-      .matches(/[a-z]/, "Password must contain at least one lowercase letter")
-      .matches(/[0-9]/, "Password must contain at least one number")
-      .matches(
-        /[@$!%*?&]/,
-        "Password must contain at least one special character (@, $, !, %, *, ?, &)"
-      )
       .oneOf([Yup.ref("password")], "Password mismatch")
       .required("Password confirmation is required"),
     clientType: Yup.string().required("Client type is required"),
-    authority: Yup.string(),
-    companyName: Yup.string(),
-    commercialLicenseNumber: Yup.string(),
+    authority: Yup.string().when("clientType", {
+      is: (value) => value === "B2B", // Ensure `value` is not undefined/null
+      then: (schema) =>
+        schema.required("Authority is required for B2B clients"),
+      otherwise: (schema) => schema.nullable(),
+    }),
+    companyName: Yup.string().when("clientType", {
+      is: (value) => value === "B2B", // Ensure `value` is not undefined/null
+      then: (schema) =>
+        schema.required("Company Name is required for B2B clients"),
+      otherwise: (schema) => schema.nullable(),
+    }),
+    commercialLicenseNumber: Yup.string().when("clientType", {
+      is: (value) => value === "B2B", // Ensure `value` is not undefined/null
+      then: (schema) =>
+        schema.required(
+          "Commercial License Number is required for B2B clients"
+        ),
+      otherwise: (schema) => schema.nullable(),
+    }),
   });
 
   const form = useForm({
     defaultValues: {
       name: "",
       phone: "",
+      countryCode: "",
       email: "",
       password: "",
       passwordConfirm: "",
-      countryCode: "",
       clientType: "",
       authority: "",
       companyName: "",
       commercialLicenseNumber: "",
     },
+
     resolver: yupResolver(schema),
   });
 
